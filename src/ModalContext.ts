@@ -14,24 +14,32 @@ export type ModalContextState = {
   updateModal: UpdateFn;
   hideModal: HideFn;
   destroyModal: DestroyFn;
-  destroyModalsByRootId: DestroyByRootIdFn;
-  showModal: ShowFn;
 };
 
 export const initialContextState = {
   state: initialState,
   hideModal: () => {},
+  destroyModal: () => {},
+  updateModal: () => {},
+};
+
+export type ShowModalContextState = {
+  showModal: ShowFn;
+  destroyModalsByRootId: DestroyByRootIdFn;
+}
+
+export const initialShowContextState = {
   showModal: () => ({
     id: 'id',
     hide: () => {},
     destroy: () => {},
     update: () => {},
   }),
-  destroyModal: () => {},
-  updateModal: () => {},
   destroyModalsByRootId: () => {},
 };
 
+
 const ModalContext = createContext<ModalContextState>(initialContextState);
+export const ShowModalContext = createContext<ShowModalContextState>(initialShowContextState);
 
 export default ModalContext;

@@ -1,7 +1,7 @@
-import { useContext, useCallback, useEffect, useRef } from 'react';
+import {useContext, useEffect, useRef, useMemo} from 'react';
 import { ShowFn } from './types';
 
-import ModalContext from './ModalContext';
+import {ShowModalContext} from './ModalContext';
 import { uid } from './utils';
 
 type Options = {
@@ -12,13 +12,12 @@ const defaultOptions: Options = {
   disableAutoDestroy: false,
 };
 
-export default function useModal(options: Options = defaultOptions) {
+export default function useModal(options: Options = defaultOptions): {showModal: ShowFn} {
   const { disableAutoDestroy } = { ...defaultOptions, ...options };
   const {
-    showModal,
     destroyModalsByRootId: destroy,
-    ...otherContextProps
-  } = useContext(ModalContext);
+    showModal
+  } = useContext(ShowModalContext);
   const id = useRef<string>(uid(6));
 
   useEffect(
@@ -30,12 +29,7 @@ export default function useModal(options: Options = defaultOptions) {
     [disableAutoDestroy, destroy]
   );
 
-  return {
-    showModal: useCallback<ShowFn>(
-      (component, props, options) =>
-        showModal(component, props, { rootId: id.current, ...options }),
-      [showModal]
-    ),
-    ...otherContextProps,
-  };
+  return useMemo<{showModal: ShowFn}>(() => ({
+    showModal: (component, props, options) => showModal(component, props, {rootId: id.current, ...options})
+  }), [showModal]);
 }

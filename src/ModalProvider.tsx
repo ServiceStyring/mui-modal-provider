@@ -1,5 +1,5 @@
 import React from 'react';
-import ModalContext from './ModalContext';
+import ModalContext, { ShowModalContext } from './ModalContext';
 import reducer, { initialState, Types } from './reducer';
 import {
   DestroyByRootIdFn,
@@ -176,18 +176,21 @@ export default function ModalProvider({ children, legacy = false }: Props) {
     });
 
   return (
-    <ModalContext.Provider
-      value={{
-        state,
-        updateModal: update,
-        hideModal: hide,
-        destroyModal: destroy,
-        showModal: show,
-        destroyModalsByRootId: destroyByRootId,
-      }}
-    >
-      {children}
-      {renderState()}
-    </ModalContext.Provider>
+    <ShowModalContext.Provider value={{
+      showModal: show,
+      destroyModalsByRootId: destroyByRootId,
+    }}>
+      <ModalContext.Provider
+        value={{
+          state,
+          updateModal: update,
+          hideModal: hide,
+          destroyModal: destroy,
+        }}
+      >
+          {children}
+          {renderState()}
+      </ModalContext.Provider>
+    </ShowModalContext.Provider>
   );
 }
