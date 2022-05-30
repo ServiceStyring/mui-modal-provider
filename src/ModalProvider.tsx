@@ -43,6 +43,8 @@ export default function ModalProvider({ children, legacy = false }: Props) {
     [dispatch]
   );
 
+  console.log("MODALPROVIDER RUN")
+
   const hide = React.useCallback<HideFn>(
     id => {
       if (!id) {
