@@ -9,7 +9,7 @@ import {
   UpdateFn,
 } from './types';
 
-export type ModalContextState = {
+export interface ModalContextState {
   state: State;
   updateModal: UpdateFn;
   hideModal: HideFn;

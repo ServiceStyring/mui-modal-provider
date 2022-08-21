@@ -4,19 +4,20 @@ import { ShowFn } from './types';
 import {ShowModalContext} from './ModalContext';
 import { uid } from './utils';
 
-type Options = {
+export interface UseModalOptions {
   disableAutoDestroy?: boolean;
-};
+}
 
-const defaultOptions: Options = {
+const defaultOptions: UseModalOptions = {
   disableAutoDestroy: false,
 };
 
-export default function useModal(options: Options = defaultOptions): {showModal: ShowFn} {
+export default function useModal(options: UseModalOptions = defaultOptions) {
   const { disableAutoDestroy } = { ...defaultOptions, ...options };
   const {
+    showModal,
     destroyModalsByRootId: destroy,
-    showModal
+    ...otherContextProps
   } = useContext(ShowModalContext);
   const id = useRef<string>(uid(6));
 
