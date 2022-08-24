@@ -43,11 +43,6 @@
     "lint": "tsdx lint",
     "prepare": "install-peers && tsdx build"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
-  },
   "prettier": {
     "printWidth": 80,
     "semi": true,
@@ -60,51 +55,12 @@
       "master"
     ]
   },
-  "jest": {
-    "collectCoverage": true,
-    "coverageDirectory": "./coverage",
-    "collectCoverageFrom": [
-      "src/**/*.{ts,tsx}",
-      "!src/test-utils/*",
-      "!src/index.ts"
-    ],
-    "coverageReporters": [
-      "json",
-      "text"
-    ],
-    "testPathIgnorePatterns": [
-      "/node_modules/"
-    ],
-    "verbose": true,
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 90,
-        "lines": 90,
-        "statements": 90
-      }
-    }
-  },
-  "peerDependencies": {
-    "@types/react": "^16.8.6 || ^17.0.0 || ^18.0.0",
-    "react": "^16.8.0 || ^17.0.0 || ^18.0.0",
-    "react-dom": "^16.8.0 || ^17.0.0 || ^18.0.0"
-  },
-  "peerDependenciesMeta": {
-    "@types/react": {
-      "optional": true
-    }
-  },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/react": "^13.3.0",
-    "@testing-library/react-hooks": "^8.0.1",
     "@types/jest": "^28.1.6",
-    "@types/react": "^18.0.15",
-    "@types/react-dom": "^18.0.6",
-    "husky": "^4.2.5",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.2.0",
     "install-peers-cli": "^2.2.0",
-    "react": "^18.2.0",
+    "react": "^18.0.0",
     "react-dom": "^18.2.0",
     "semantic-release": "^18.0.1",
     "tsdx": "^0.14.1",

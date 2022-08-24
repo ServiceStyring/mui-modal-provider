@@ -1,5 +1,5 @@
 import React from 'react';
-import ModalContext, { ShowModalContext } from './ModalContext';
+import ModalContext, { ShowModalContext } from './modal-context';
 import reducer, { initialState, Types } from './reducer';
 import {
   DestroyByRootIdFn,
