@@ -14,7 +14,7 @@ const style: SxProps<Theme> = {
   p: 4,
 };
 
-export interface SimpleModalProps extends Omit<ModalProps, 'children'> {};
+export interface SimpleModalProps extends Omit<ModalProps, 'children'> {}
 
 const SimpleModal: React.FC<SimpleModalProps> = props => (
   <Modal {...props}>

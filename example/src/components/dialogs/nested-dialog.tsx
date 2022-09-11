@@ -8,7 +8,7 @@ import { useModal } from '../../../../src';
 
 export interface NestedDialogProps extends DialogProps {
   deep: number;
-};
+}
 
 const NestedDialog: React.FC<NestedDialogProps> = ({ deep = 0, ...props }) => {
   const { showModal } = useModal();

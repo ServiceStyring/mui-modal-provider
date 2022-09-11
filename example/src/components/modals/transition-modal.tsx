@@ -21,7 +21,7 @@ const style: SxProps<Theme> = {
 
 export interface TransitionsModalProps extends Omit<ModalProps, 'children'> {
   TransitionProps: TransitionProps;
-};
+}
 
 export default function TransitionsModal({ open, ...props }: TransitionsModalProps) {
   /**

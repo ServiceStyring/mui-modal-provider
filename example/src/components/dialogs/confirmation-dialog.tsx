@@ -11,7 +11,7 @@ export interface ConfirmationDialogProps extends DialogProps {
   description: string;
   onCancel: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   onConfirm: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
-};
+}
 
 const ConfirmationDialog: React.FC<ConfirmationDialogProps> = ({
   title,

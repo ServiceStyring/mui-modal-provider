@@ -14,7 +14,7 @@ export interface ModalContextState {
   updateModal: UpdateFn;
   hideModal: HideFn;
   destroyModal: DestroyFn;
-};
+}
 
 export const initialContextState = {
   state: initialState,
