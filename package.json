@@ -1,11 +1,11 @@
 {
-  "version": "2.1.0",
+  "version": "2.2.0",
   "license": "MIT",
-  "name": "mui-modal-provider",
-  "author": "Quernest",
+  "name": "svs-mui-modal-provider",
+  "author": "ServiceStyring",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Quernest/mui-modal-provider"
+    "url": "https://github.com/ServiceStyring/mui-modal-provider"
   },
   "keywords": [
     "context",
