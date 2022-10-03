@@ -1,5 +1,5 @@
 {
-  "version": "2.2.0",
+  "version": "2.2.1",
   "license": "MIT",
   "name": "svs-mui-modal-provider",
   "author": "ServiceStyring",
@@ -29,7 +29,7 @@
     "typescript",
     "dialog"
   ],
-  "module": "dist/mui-modal-provider.esm.js",
+  "module": "dist/svs-mui-modal-provider.esm.js",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
   "files": [
